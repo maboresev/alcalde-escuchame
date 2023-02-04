@@ -1,0 +1,55 @@
+version: "3"
+services:
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile.web
+    links:
+      - database:database
+    hostname: tfg_web
+    container_name: tfg_web
+    stdin_open: true
+    tty: true
+    restart: 'always'
+    networks:
+     staging:
+       ipv4_address: 172.21.0.40
+    volumes:
+      - ./:/var/www/html/
+      - ./files/files/:/var/www/html/src/web/sites/default/files/
+      - ./files/settings.php:/var/www/html/src/web/sites/default/settings.php
+      - /Users/$USER/.ssh:/Users/developer/.ssh
+      - /Users/$USER/.gitconfig:/Users/developer/.gitconfig
+    entrypoint: |
+      /bin/bash -c "
+        service ssh start
+        service apache2 start
+        /etc/init.d/memcached start
+        /bin/bash || exit 0
+      "
+  database:
+    build:
+      context: ./
+      dockerfile: Dockerfile.db
+    restart: 'always'
+    container_name: tfg_db
+    hostname: tfg_db
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./database/:/var/lib/mysql/
+      - ./files/my.cnf:/etc/mysql/my.cnf
+    entrypoint: |
+      /bin/bash -c "
+        service ssh start
+        service mysql start
+        /bin/bash || exit 0
+      "
+    networks:
+      staging:
+        ipv4_address: 172.21.0.41
+networks:
+  staging:
+    external:
+      name: staging
+
