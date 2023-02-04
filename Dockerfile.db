@@ -1,0 +1,40 @@
+#Download base image ubuntu 20.04 + MySql
+FROM ubuntu:20.04
+
+# System environments
+ENV MYSQL_ROOT_PASSWORD="developer" \
+	DEBIAN_FRONTEND=noninteractive
+
+# Update Ubuntu Software repository
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN apt-get -qq update && apt-get -yqq upgrade && \
+
+# Install some basic tools needed for deployment
+apt-get install -yqq apt-utils 2>&1 | grep -v "debconf: delaying package configuration, since apt-utils is not installed" && \
+apt-get -yqq install --no-install-recommends \
+    mysql-server \
+    vim \
+    nano \
+    htop \
+    tree \
+    net-tools \
+    iputils-ping \
+    openssh-server \
+	openssh-client && \
+
+sed -i "s/.*bind-address.*/#bind-address = 0.0.0.0/" \
+    /etc/mysql/mysql.conf.d/mysqld.cnf && \
+
+usermod -u 1000 mysql && \
+groupmod -g 1000 mysql && \
+mkdir -p /var/lib/mysql && \
+mkdir -p /var/run/mysqld && \
+mkdir -p /var/log/mysql && \
+chown -R mysql:mysql /var/lib/mysql && \
+chown -R mysql:mysql /var/run/mysqld && \
+chown -R mysql:mysql /var/log/mysql && \
+
+usermod -d /var/lib/mysql/ mysql
+
+EXPOSE 3306 22
+
