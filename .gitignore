@@ -18,7 +18,6 @@
 /src/web/sites/*/tmp
 /src/web/sites/*/cache
 /files/
-/database/
 
 # Ignore testing related files
 /src/web/sites/simpletest
