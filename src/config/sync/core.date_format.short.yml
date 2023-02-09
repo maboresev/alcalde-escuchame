@@ -1,0 +1,10 @@
+uuid: 9cf3f4c5-c9ec-4a69-ac9a-a9d3d1f6d7ce
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: AlzeyytA8InBgxIG9H2UDJYs3CG98Zj6yRsDKmlbZwA
+id: short
+label: 'Fecha corta por defecto'
+locked: false
+pattern: 'd/m/Y - H:i'
