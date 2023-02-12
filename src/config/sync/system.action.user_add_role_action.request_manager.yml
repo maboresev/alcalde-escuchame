@@ -1,0 +1,14 @@
+uuid: 25cae9ed-c19b-417a-a26b-463aab937bd8
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.request_manager
+  module:
+    - user
+id: user_add_role_action.request_manager
+label: 'Añade el rol Gestor de solicitudes al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: request_manager

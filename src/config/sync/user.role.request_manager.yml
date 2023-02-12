@@ -1,0 +1,9 @@
+uuid: 410d0756-5641-4820-8f36-a72ceab80f2f
+langcode: es
+status: true
+dependencies: {  }
+id: request_manager
+label: 'Gestor de solicitudes'
+weight: 4
+is_admin: null
+permissions: {  }

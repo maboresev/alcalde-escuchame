@@ -1,0 +1,36 @@
+uuid: a8cb01ba-7f0f-485a-ab8f-47e3c62c15a0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.request.body
+    - node.type.request
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.request.default
+targetEntityType: node
+bundle: request
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
