@@ -49,12 +49,14 @@ module:
   taxonomy: 0
   telephone: 0
   text: 0
+  token: 0
   toolbar: 0
   tour: 0
   update: 0
   user: 0
   views_ui: 0
   workflows: 0
+  pathauto: 1
   content_translation: 10
   views: 10
   standard: 1000
