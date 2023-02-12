@@ -1,0 +1,86 @@
+uuid: afcc5959-27af-4ab6-bbd6-be5d51e9f3bc
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.request
+  module:
+    - content_moderation
+id: request_management
+label: 'Tramitación de la solicitud'
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      label: 'Solicitud realizada'
+      weight: 0
+      published: false
+      default_revision: false
+    ended:
+      label: Finalizada
+      weight: 5
+      published: true
+      default_revision: true
+    in_process:
+      label: 'En tramitación'
+      weight: 3
+      published: true
+      default_revision: true
+    in_study:
+      label: 'En estudio'
+      weight: 2
+      published: true
+      default_revision: true
+    published:
+      label: Publicada
+      weight: 1
+      published: true
+      default_revision: true
+    rejected:
+      label: Rechazada
+      weight: 4
+      published: true
+      default_revision: true
+  transitions:
+    create_new_draft:
+      label: 'Nueva solicitud'
+      from:
+        - draft
+      to: draft
+      weight: 0
+    publish:
+      label: Publicar
+      from:
+        - draft
+      to: published
+      weight: 1
+    reject:
+      label: Rechazar
+      from:
+        - in_study
+        - published
+      to: rejected
+      weight: 4
+    to_end:
+      label: Finalizar
+      from:
+        - in_process
+      to: ended
+      weight: 5
+    to_in_process:
+      label: "Pasar a 'en tramitación'"
+      from:
+        - in_study
+        - published
+      to: in_process
+      weight: 3
+    to_in_study:
+      label: "Pasar a 'en estudio'"
+      from:
+        - published
+      to: in_study
+      weight: 2
+  entity_types:
+    node:
+      - request
+  default_moderation_state: draft

@@ -1,0 +1,14 @@
+uuid: 63f67fb2-ef35-4e1c-a752-3da023411157
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.request_manager
+  module:
+    - user
+id: user_remove_role_action.request_manager
+label: 'Elimina el rol Gestor de solicitudes al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: request_manager

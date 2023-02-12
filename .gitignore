@@ -48,3 +48,4 @@
 /src/web/robots.txt
 /src/web/update.php
 /src/web/web.config
+/src/web/modules/contrib/*
