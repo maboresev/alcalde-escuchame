@@ -1,9 +1,10 @@
-uuid: f4d0a942-4ff5-48ab-b43b-c6ea725e157f
+uuid: 759fdcc8-abc0-45da-94d2-028e90cb46a3
 langcode: es
 status: true
 dependencies:
   config:
     - core.entity_view_display.comment.comment.default
+    - core.entity_view_mode.node.full
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_image
@@ -32,8 +33,8 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          b84715ca-93fe-4c15-8fbb-b47bba54e308:
-            uuid: b84715ca-93fe-4c15-8fbb-b47bba54e308
+          b72080ae-05b9-43a7-bd25-53b373a9aa26:
+            uuid: b72080ae-05b9-43a7-bd25-53b373a9aa26
             region: content
             configuration:
               id: 'field_block:node:article:field_image'
@@ -51,8 +52,8 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          747d76bb-abc9-46e9-b742-29d99a4b9194:
-            uuid: 747d76bb-abc9-46e9-b742-29d99a4b9194
+          e0c20d67-f2cb-4bfa-9f4f-6cb2ffeb456f:
+            uuid: e0c20d67-f2cb-4bfa-9f4f-6cb2ffeb456f
             region: content
             configuration:
               id: 'field_block:node:article:body'
@@ -66,8 +67,8 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
-          29430c0a-8089-40ad-9a4d-4753768071ed:
-            uuid: 29430c0a-8089-40ad-9a4d-4753768071ed
+          37ca9921-8d95-4f5b-bf13-ec751906286e:
+            uuid: 37ca9921-8d95-4f5b-bf13-ec751906286e
             region: content
             configuration:
               id: 'field_block:node:article:field_tags'
@@ -82,8 +83,8 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
-          e56ecc8d-6f0a-4cc0-9da2-24f59f063ab1:
-            uuid: e56ecc8d-6f0a-4cc0-9da2-24f59f063ab1
+          61f417d8-641d-46f9-ad9a-771a4aa642db:
+            uuid: 61f417d8-641d-46f9-ad9a-771a4aa642db
             region: content
             configuration:
               id: 'extra_field_block:node:article:links'
@@ -92,8 +93,8 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 3
             additional: {  }
-          c52ffe6b-2085-407d-8e48-31c9ac8e1a50:
-            uuid: c52ffe6b-2085-407d-8e48-31c9ac8e1a50
+          87dc7f75-e88a-44b7-8583-2f5fbfce7247:
+            uuid: 87dc7f75-e88a-44b7-8583-2f5fbfce7247
             region: content
             configuration:
               id: 'field_block:node:article:comment'
@@ -112,10 +113,10 @@ third_party_settings:
         third_party_settings: {  }
 _core:
   default_config_hash: 7fb0j9HnIXfP9ndewzgPPzzeX_SV532wuYpkscrCMCk
-id: node.article.default
+id: node.article.full
 targetEntityType: node
 bundle: article
-mode: default
+mode: full
 content:
   body:
     type: text_default

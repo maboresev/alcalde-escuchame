@@ -1,9 +1,42 @@
 uuid: 410d0756-5641-4820-8f36-a72ceab80f2f
 langcode: es
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.request
+    - workflows.workflow.request_management
+  module:
+    - comment
+    - content_moderation
+    - file
+    - node
+    - toolbar
 id: request_manager
 label: 'Gestor de solicitudes'
 weight: 4
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access content overview'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer comments'
+  - 'delete all revisions'
+  - 'delete any request content'
+  - 'delete own request content'
+  - 'delete request revisions'
+  - 'edit any request content'
+  - 'edit own comments'
+  - 'edit own request content'
+  - 'post comments'
+  - 'revert all revisions'
+  - 'revert request revisions'
+  - 'skip comment approval'
+  - 'use request_management transition publish'
+  - 'use request_management transition reject'
+  - 'use request_management transition to_end'
+  - 'use request_management transition to_in_process'
+  - 'use request_management transition to_in_study'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view request revisions'

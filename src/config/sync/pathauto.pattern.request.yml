@@ -1,0 +1,22 @@
+uuid: f368a3e5-665d-438c-8cc0-46ab9bd8d4ac
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: request
+label: Solicitud
+type: 'canonical_entities:node'
+pattern: '/solicitudes/[node:title]'
+selection_criteria:
+  c1156963-fb5a-4ef0-b016-8a53c51d77a6:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: c1156963-fb5a-4ef0-b016-8a53c51d77a6
+    context_mapping:
+      node: node
+    bundles:
+      request: request
+selection_logic: and
+weight: -5
+relationships: {  }

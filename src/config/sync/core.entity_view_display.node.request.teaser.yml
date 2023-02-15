@@ -8,6 +8,7 @@ dependencies:
     - node.type.request
   module:
     - field_layout
+    - layout_builder
     - layout_discovery
     - text
     - user
@@ -16,6 +17,51 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          10b97354-95e4-4207-be4a-25281c12a4ca:
+            uuid: 10b97354-95e4-4207-be4a-25281c12a4ca
+            region: content
+            configuration:
+              id: 'extra_field_block:node:request:content_moderation_control'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          174d06a5-f530-46ad-9623-a41673ed8353:
+            uuid: 174d06a5-f530-46ad-9623-a41673ed8353
+            region: content
+            configuration:
+              id: 'extra_field_block:node:request:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
+            additional: {  }
+          92345fab-58b3-47ac-84e6-9e16b58555f3:
+            uuid: 92345fab-58b3-47ac-84e6-9e16b58555f3
+            region: content
+            configuration:
+              id: 'field_block:node:request:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_summary_or_trimmed
+                label: hidden
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
 id: node.request.teaser
 targetEntityType: node
 bundle: request
@@ -28,6 +74,11 @@ content:
       trim_length: 600
     third_party_settings: {  }
     weight: 101
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
     region: content
   links:
     settings: {  }
