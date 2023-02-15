@@ -2,6 +2,8 @@ uuid: 9f7b9f31-8404-47e9-9389-c794e9228083
 langcode: es
 status: true
 dependencies:
+  module:
+    - node
   theme:
     - olivero
 _core:
@@ -17,4 +19,12 @@ settings:
   label: 'Título de la página'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      request: request
