@@ -1,11 +1,10 @@
-uuid: ddc2925e-8e9b-46bd-bce1-7f08cae5d456
+uuid: f66c5b67-bcaf-4e7b-b492-283656c2de39
 langcode: es
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.full
     - field.field.node.page.body
-    - field.field.node.page.layout_builder__layout
     - node.type.page
   module:
     - field_layout
@@ -20,14 +19,15 @@ third_party_settings:
       label: ''
   layout_builder:
     enabled: true
+    allow_custom: true
     sections:
       -
         layout_id: layout_onecol
         layout_settings:
           label: ''
         components:
-          bc96bf4a-4a55-4254-bc1b-05f9c5225d69:
-            uuid: bc96bf4a-4a55-4254-bc1b-05f9c5225d69
+          c882961a-b9bf-4a39-8233-890b7154e122:
+            uuid: c882961a-b9bf-4a39-8233-890b7154e122
             region: content
             configuration:
               id: 'field_block:node:page:body'
@@ -35,15 +35,14 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
               formatter:
-                type: text_summary_or_trimmed
+                type: text_default
                 label: hidden
-                settings:
-                  trim_length: 600
+                settings: {  }
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          013fb47e-dd3f-40e9-9797-5bd5680ff07c:
-            uuid: 013fb47e-dd3f-40e9-9797-5bd5680ff07c
+          52864208-584d-40a7-a925-b80b27e96b19:
+            uuid: 52864208-584d-40a7-a925-b80b27e96b19
             region: content
             configuration:
               id: 'extra_field_block:node:page:links'
@@ -54,17 +53,16 @@ third_party_settings:
             additional: {  }
         third_party_settings: {  }
 _core:
-  default_config_hash: 8BgdRtLbtQ0F__o0FHSH0Mx5fvXOra9tfT1GmNKbRYw
-id: node.page.teaser
+  default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
+id: node.page.full
 targetEntityType: node
 bundle: page
-mode: teaser
+mode: full
 content:
   body:
-    type: text_summary_or_trimmed
+    type: text_default
     label: hidden
-    settings:
-      trim_length: 600
+    settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
@@ -75,4 +73,3 @@ content:
     region: content
 hidden:
   langcode: true
-  layout_builder__layout: true
