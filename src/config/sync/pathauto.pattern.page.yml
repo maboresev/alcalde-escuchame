@@ -1,0 +1,22 @@
+uuid: d2544014-7d21-4bf8-b0ca-b46c1cea84ec
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: page
+label: 'Página básica'
+type: 'canonical_entities:node'
+pattern: '/[node:title]'
+selection_criteria:
+  41f86bb5-8959-4b7a-a6e5-0923ccaaee0c:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 41f86bb5-8959-4b7a-a6e5-0923ccaaee0c
+    context_mapping:
+      node: node
+    bundles:
+      page: page
+selection_logic: and
+weight: -5
+relationships: {  }
