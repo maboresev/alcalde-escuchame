@@ -1,0 +1,8 @@
+uuid: c1b2e327-7f04-48d2-a784-b0b8fd88ea4c
+langcode: es
+status: true
+dependencies: {  }
+name: 'Tipo de incidencia'
+vid: issue_type
+description: ''
+weight: 0

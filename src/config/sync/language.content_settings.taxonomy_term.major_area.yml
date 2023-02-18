@@ -1,0 +1,11 @@
+uuid: b5f8124e-79c6-491b-9b1f-3c5013dcd735
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.major_area
+id: taxonomy_term.major_area
+target_entity_type_id: taxonomy_term
+target_bundle: major_area
+default_langcode: site_default
+language_alterable: false

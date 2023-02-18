@@ -1,0 +1,8 @@
+uuid: a475839f-5252-446e-8626-7144fa08c36b
+langcode: es
+status: true
+dependencies: {  }
+name: 'Área del ayuntamiento'
+vid: major_area
+description: ''
+weight: 0
