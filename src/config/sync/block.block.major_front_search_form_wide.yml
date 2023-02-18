@@ -1,0 +1,23 @@
+uuid: bbcaf03a-f3e6-4610-a254-2d340a819d7f
+langcode: es
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - major_front
+_core:
+  default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
+id: major_front_search_form_wide
+theme: major_front
+region: secondary_menu
+weight: -6
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Formulario de búsqueda (ancho)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

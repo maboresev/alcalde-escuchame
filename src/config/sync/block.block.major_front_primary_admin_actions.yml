@@ -1,0 +1,20 @@
+uuid: c2c89452-7b9b-4cb4-bf0a-5edb7b964356
+langcode: es
+status: true
+dependencies:
+  theme:
+    - major_front
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: major_front_primary_admin_actions
+theme: major_front
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Acciones principales de administración'
+  label_display: '0'
+  provider: core
+visibility: {  }

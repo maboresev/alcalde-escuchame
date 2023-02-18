@@ -1,0 +1,5 @@
+name : 'Major General'
+description : 'Provides general functionality of Major project.'
+core_version_requirement: ^10
+type: module
+package: Major
