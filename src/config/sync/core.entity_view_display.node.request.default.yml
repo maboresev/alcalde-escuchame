@@ -4,9 +4,17 @@ status: true
 dependencies:
   config:
     - field.field.node.request.body
+    - field.field.node.request.field_comments
+    - field.field.node.request.field_images
+    - field.field.node.request.field_issue_type
+    - field.field.node.request.field_location
+    - field.field.node.request.field_major_area
     - node.type.request
   module:
+    - comment
     - field_layout
+    - geofield
+    - image
     - layout_builder
     - layout_discovery
     - text
@@ -60,6 +68,96 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
+          caec1227-723b-4b7e-b55b-b8b66bdfcf2a:
+            uuid: caec1227-723b-4b7e-b55b-b8b66bdfcf2a
+            region: content
+            configuration:
+              id: 'field_block:node:request:field_location'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: geofield_default
+                label: above
+                settings:
+                  output_format: wkt
+                  output_escape: true
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          3fe9df9c-8eb8-41c9-9707-6d888dbf5450:
+            uuid: 3fe9df9c-8eb8-41c9-9707-6d888dbf5450
+            region: content
+            configuration:
+              id: 'field_block:node:request:field_issue_type'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          17ec211b-8adb-49a1-a618-fd7d9c4baf37:
+            uuid: 17ec211b-8adb-49a1-a618-fd7d9c4baf37
+            region: content
+            configuration:
+              id: 'field_block:node:request:field_major_area'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          3593a653-5028-4ad3-ba88-772bc6c6bf83:
+            uuid: 3593a653-5028-4ad3-ba88-772bc6c6bf83
+            region: content
+            configuration:
+              id: 'field_block:node:request:field_images'
+              label: Imágenes
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: photoswipe_field_formatter
+                label: above
+                settings:
+                  photoswipe_node_style_first: ''
+                  photoswipe_node_style: ''
+                  photoswipe_image_style: ''
+                  photoswipe_caption: alt
+                  photoswipe_caption_custom: ''
+                  photoswipe_view_mode: _custom
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          16d80ac9-2db0-4e67-96eb-dd5d809a14d0:
+            uuid: 16d80ac9-2db0-4e67-96eb-dd5d809a14d0
+            region: content
+            configuration:
+              id: 'field_block:node:request:field_comments'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: comment_default
+                label: above
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
         third_party_settings: {  }
 id: node.request.default
 targetEntityType: node
@@ -77,6 +175,51 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: -20
+    region: content
+  field_comments:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_images:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_issue_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_location:
+    type: geofield_default
+    label: above
+    settings:
+      output_format: wkt
+      output_escape: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_major_area:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
     region: content
   links:
     settings: {  }

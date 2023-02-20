@@ -1,0 +1,22 @@
+uuid: aecc8eda-2fa9-4fcc-9134-1e665ee3af4d
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - major_front
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: major_front_content
+theme: major_front
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenido principal de la página'
+  label_display: '0'
+  provider: system
+visibility: {  }

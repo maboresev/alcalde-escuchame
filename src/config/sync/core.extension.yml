@@ -37,6 +37,7 @@ module:
   leaflet_views: 0
   link: 0
   locale: 0
+  major_general: 0
   menu_link_content: 0
   menu_ui: 0
   mysql: 0
@@ -45,6 +46,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  photoswipe: 0
   search: 0
   shortcut: 0
   statistics: 0
@@ -67,4 +69,5 @@ module:
 theme:
   olivero: 0
   claro: 0
+  major_front: 0
 profile: standard

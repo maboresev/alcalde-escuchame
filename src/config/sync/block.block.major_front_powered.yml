@@ -1,0 +1,22 @@
+uuid: a551efd7-5108-446c-88f7-362651521cc5
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - major_front
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: major_front_powered
+theme: major_front
+region: footer_bottom
+weight: -6
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Funciona con Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

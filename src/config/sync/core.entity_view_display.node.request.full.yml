@@ -5,6 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.request.body
+    - field.field.node.request.field_comments
+    - field.field.node.request.field_images
+    - field.field.node.request.field_issue_type
+    - field.field.node.request.field_location
+    - field.field.node.request.field_major_area
     - node.type.request
   module:
     - field_layout
@@ -85,4 +90,9 @@ content:
     weight: 100
     region: content
 hidden:
+  field_comments: true
+  field_images: true
+  field_issue_type: true
+  field_location: true
+  field_major_area: true
   langcode: true

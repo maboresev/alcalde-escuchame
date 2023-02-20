@@ -1,0 +1,32 @@
+uuid: 714dc64e-ec02-4deb-8796-826452b829b5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.request
+  module:
+    - geofield
+id: node.request.field_location
+field_name: field_location
+entity_type: node
+bundle: request
+label: Ubicación
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'POINT (-5.9833333333333 37.383333333333)'
+    geo_type: Point
+    lat: 37.383333333333
+    lon: -5.9833333333333
+    left: -5.9833333333333
+    top: 37.383333333333
+    right: -5.9833333333333
+    bottom: 37.383333333333
+    geohash: eyesxv7jdnrm99gg
+    latlon: '37.383333333333,-5.9833333333333'
+default_value_callback: ''
+settings: {  }
+field_type: geofield

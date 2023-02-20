@@ -1,0 +1,29 @@
+uuid: ad0f982a-c57d-475e-bc34-c6a6f342c600
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_major_area
+    - node.type.request
+    - taxonomy.vocabulary.major_area
+id: node.request.field_major_area
+field_name: field_major_area
+entity_type: node
+bundle: request
+label: 'Área del ayuntamiento'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      major_area: major_area
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
