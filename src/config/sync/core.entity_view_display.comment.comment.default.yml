@@ -36,17 +36,26 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
-          b267a3b9-f4d3-43b6-8bce-6121d65be6c2:
-            uuid: b267a3b9-f4d3-43b6-8bce-6121d65be6c2
+          c7c9b3c4-6276-44fd-8447-8641f6ba6a2c:
+            uuid: c7c9b3c4-6276-44fd-8447-8641f6ba6a2c
             region: content
             configuration:
-              id: 'extra_field_block:comment:comment:links'
+              id: 'field_block:comment:comment:subject'
+              label: Asunto
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
-            weight: 1
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
             additional: {  }
         third_party_settings: {  }
 _core:

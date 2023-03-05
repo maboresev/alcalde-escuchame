@@ -57,6 +57,7 @@ type_settings:
     reject:
       label: Rechazar
       from:
+        - draft
         - in_study
         - published
       to: rejected
