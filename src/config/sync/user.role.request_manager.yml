@@ -10,6 +10,7 @@ dependencies:
     - content_moderation
     - file
     - node
+    - system
     - toolbar
 id: request_manager
 label: 'Gestor de solicitudes'
@@ -40,3 +41,4 @@ permissions:
   - 'view all revisions'
   - 'view any unpublished content'
   - 'view request revisions'
+  - 'view the administration theme'
