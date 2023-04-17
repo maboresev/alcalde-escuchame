@@ -1,0 +1,30 @@
+uuid: 47995056-49e6-4afd-b893-9fdd54fba53c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_functional_areas
+    - taxonomy.vocabulary.major_area
+  module:
+    - user
+id: user.user.field_functional_areas
+field_name: field_functional_areas
+entity_type: user
+bundle: user
+label: 'Áreas funcionales'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      major_area: major_area
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

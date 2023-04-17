@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_functional_areas
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -53,6 +54,22 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 1
             additional: {  }
+          ed0bd9ae-ab89-4841-a461-ae0289ea789c:
+            uuid: ed0bd9ae-ab89-4841-a461-ae0289ea789c
+            region: content
+            configuration:
+              id: 'field_block:user:user:field_functional_areas'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
@@ -61,6 +78,14 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_functional_areas:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
   member_for:
     settings: {  }
     third_party_settings: {  }

@@ -3,18 +3,21 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_functional_areas
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - field_layout
     - image
-    - layout_discovery
+    - layout_builder
+    - path
     - user
 third_party_settings:
   field_layout:
-    id: layout_onecol
+    id: layout_twocol_section
     settings:
       label: ''
+      column_widths: 50-50
 _core:
   default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
 id: user.user.default
@@ -23,24 +26,39 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
-    region: content
-  contact:
-    weight: 5
-    region: content
-  language:
     weight: 0
-    region: content
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 3
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  language:
+    weight: 2
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    region: first
+    settings: {  }
+    third_party_settings: {  }
   timezone:
-    weight: 6
-    region: content
+    weight: 4
+    region: first
+    settings: {  }
+    third_party_settings: {  }
   user_picture:
     type: image_image
-    weight: -1
-    region: content
+    weight: 1
+    region: first
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
+  field_functional_areas: true
   langcode: true
