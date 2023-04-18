@@ -1,0 +1,29 @@
+uuid: 614d9cac-fd9e-4f83-a173-1eec309d8e69
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.requests_list
+  module:
+    - system
+    - views
+  theme:
+    - major_front
+id: views_block__requests_list_block_1
+theme: major_front
+region: content_below
+weight: 0
+provider: null
+plugin: 'views_block:requests_list-block_1'
+settings:
+  id: 'views_block:requests_list-block_1'
+  label: 'Últimas solicitudes'
+  label_display: '0'
+  provider: views
+  views_label: 'Últimas solicitudes'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
