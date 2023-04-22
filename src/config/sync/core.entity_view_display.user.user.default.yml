@@ -54,9 +54,17 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 1
             additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 50-50
+        components:
           ed0bd9ae-ab89-4841-a461-ae0289ea789c:
             uuid: ed0bd9ae-ab89-4841-a461-ae0289ea789c
-            region: content
+            region: first
             configuration:
               id: 'field_block:user:user:field_functional_areas'
               label_display: '0'
@@ -68,7 +76,44 @@ third_party_settings:
                 settings:
                   link: true
                 third_party_settings: {  }
-            weight: 2
+            weight: 1
+            additional: {  }
+          c5c93609-0103-4592-8e5e-9054eac004f2:
+            uuid: c5c93609-0103-4592-8e5e-9054eac004f2
+            region: first
+            configuration:
+              id: 'field_block:user:user:name'
+              label: Nombre
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: '@user.current_user_context:current_user'
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          58297c72-c96c-4f8e-b271-8a74ba97b9a7:
+            uuid: 58297c72-c96c-4f8e-b271-8a74ba97b9a7
+            region: second
+            configuration:
+              id: 'field_block:user:user:mail'
+              label: 'Correo electrónico'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: '@user.current_user_context:current_user'
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
             additional: {  }
         third_party_settings: {  }
 _core:
