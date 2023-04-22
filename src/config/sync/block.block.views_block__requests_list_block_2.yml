@@ -1,0 +1,30 @@
+uuid: 371050bb-0428-467b-b4cc-e85eb2b5139a
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.requests_list
+  module:
+    - system
+    - views
+  theme:
+    - major_front
+id: views_block__requests_list_block_2
+theme: major_front
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:requests_list-block_2'
+settings:
+  id: 'views_block:requests_list-block_2'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/user/*'
