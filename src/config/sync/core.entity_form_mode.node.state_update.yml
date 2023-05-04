@@ -1,0 +1,10 @@
+uuid: dedffdd8-5944-42af-818b-74ab23e00bb0
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.state_update
+label: 'Cambio de estado'
+targetEntityType: node
+cache: true

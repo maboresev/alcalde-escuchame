@@ -38,6 +38,7 @@ module:
   leaflet_views: 0
   link: 0
   locale: 0
+  major_flows: 0
   major_general: 0
   menu_link_content: 0
   menu_ui: 0

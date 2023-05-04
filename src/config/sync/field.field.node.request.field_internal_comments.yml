@@ -1,0 +1,19 @@
+uuid: ab3f7c7e-47b5-40b6-b5fe-49511d72e65f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_internal_comments
+    - node.type.request
+id: node.request.field_internal_comments
+field_name: field_internal_comments
+entity_type: node
+bundle: request
+label: 'Comentarios internos'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

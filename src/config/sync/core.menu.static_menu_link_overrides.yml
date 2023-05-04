@@ -3,14 +3,14 @@ _core:
 langcode: es
 definitions:
   contact__site_page:
+    enabled: false
     menu_name: footer
     parent: ''
-    weight: 0
     expanded: false
-    enabled: true
+    weight: 0
   standard__front_page:
+    weight: -49
     menu_name: main
     parent: ''
-    weight: 0
     expanded: false
     enabled: false

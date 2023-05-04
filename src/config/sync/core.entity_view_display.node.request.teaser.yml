@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.request.body
     - field.field.node.request.field_comments
     - field.field.node.request.field_images
+    - field.field.node.request.field_internal_comments
     - field.field.node.request.field_issue_type
     - field.field.node.request.field_location
     - field.field.node.request.field_major_area
@@ -93,6 +94,7 @@ content:
 hidden:
   field_comments: true
   field_images: true
+  field_internal_comments: true
   field_issue_type: true
   field_location: true
   field_major_area: true
