@@ -10,7 +10,7 @@ use Drupal\user\Entity\User;
 
 function major_general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $current_user = User::load(\Drupal::currentUser()->id());
-  if (('user_form' == $form_id) 
+  if ((('user_form' == $form_id) || ('user_register_form' == $form_id)) 
     && !($current_user->hasRole('administrator') || $current_user->hasRole('request_manager'))) {
     unset($form['field_functional_areas']);
   }
