@@ -15,7 +15,13 @@ class UpdateContentController extends ControllerBase {
   public function landingPage($nid) {
     $node = Node::load($nid);
     $form = \Drupal::service('entity.form_builder')->getForm($node);
-    unset($form['field_images']);
+    $form['field_images']['#access'] = FALSE;
+    $form['field_issue_type']['#access'] = FALSE;
+    $form['field_location']['#access'] = FALSE;
+    $form['body']['#access'] = FALSE;
+    $form['title']['widget'][0]['value']['#attributes'] = [
+      'disabled' => TRUE
+    ];
     return $form;
   }
 
