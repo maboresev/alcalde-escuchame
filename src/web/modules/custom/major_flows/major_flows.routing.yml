@@ -1,0 +1,7 @@
+major_flows.update_contet:
+    path: '/admin/content/requests/{nid}/update'
+    defaults:
+        _controller: 'Drupal\major_flows\Controller\UpdateContentController::landingPage'
+        _title: 'Actualizar Contenido'
+    requirements:    
+        _permission : 'edit any request content'

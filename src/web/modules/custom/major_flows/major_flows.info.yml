@@ -1,0 +1,5 @@
+name : 'Major Flows'
+description : 'Provides functionality of flows on Major webpage.'
+core_version_requirement: ^10
+type: module
+package: Major

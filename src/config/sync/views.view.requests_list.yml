@@ -3,9 +3,11 @@ langcode: es
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.storage.node.field_major_area
     - node.type.request
     - system.menu.main
+    - workflows.workflow.request_management
   module:
     - content_moderation
     - node
@@ -292,6 +294,8 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: requests-view
+      use_ajax: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -353,7 +357,7 @@ display:
         type: full
         options:
           offset: 0
-          items_per_page: 16
+          items_per_page: 3
           total_pages: null
           id: 0
           tags:
@@ -440,10 +444,20 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
       defaults:
         empty: false
         title: false
         pager: false
+        style: false
+        row: false
         arguments: false
         filters: false
         filter_groups: false
@@ -471,7 +485,7 @@ display:
         type: full
         options:
           offset: 0
-          items_per_page: 16
+          items_per_page: 8
           total_pages: null
           id: 0
           tags:
@@ -488,15 +502,117 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            request: request
+        moderation_state:
+          id: moderation_state
+          table: node_field_data
+          field: moderation_state
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: moderation_state_filter
+          operator: in
+          value:
+            all: all
+            request_management-published: request_management-published
+            request_management-in_study: request_management-in_study
+            request_management-in_process: request_management-in_process
+            request_management-rejected: request_management-rejected
+            request_management-ended: request_management-ended
+          group: 1
+          exposed: true
+          expose:
+            operator_id: moderation_state_op
+            label: Estado
+            description: ''
+            use_operator: false
+            operator: moderation_state_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: moderation_state
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              request_manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
       defaults:
         pager: false
+        style: false
+        row: false
+        filters: false
+        filter_groups: false
+        header: false
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<h2>Listado de reportes<h2>'
+            format: basic_html
+          tokenize: false
       display_extenders: {  }
       path: solicitudes
       menu:
         type: normal
         title: Solicitudes
         description: ''
-        weight: 0
+        weight: -47
         expanded: false
         menu_name: main
         parent: ''
@@ -506,8 +622,10 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_major_area'
+        - 'config:workflow_list'

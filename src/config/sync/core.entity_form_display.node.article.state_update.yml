@@ -1,0 +1,47 @@
+uuid: 614097fa-f684-4cec-9689-e23be36d6700
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.state_update
+    - field.field.node.article.body
+    - field.field.node.article.comment
+    - field.field.node.article.field_image
+    - field.field.node.article.field_tags
+    - node.type.article
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: ewbd6G2uX456-bgwseM2Q-KQG3RkASoyHmTh-XR3oLU
+id: node.article.state_update
+targetEntityType: node
+bundle: article
+mode: state_update
+content:
+  moderation_state:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  comment: true
+  created: true
+  field_image: true
+  field_tags: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

@@ -1,0 +1,14 @@
+uuid: 8702cd82-fb22-40df-ac31-da1a1c22cd23
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: usuarios
+label: Usuarios
+type: 'canonical_entities:user'
+pattern: '/usuario/[user:display-name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

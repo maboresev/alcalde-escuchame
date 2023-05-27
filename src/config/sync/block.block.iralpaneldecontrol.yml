@@ -1,0 +1,39 @@
+uuid: e6a73707-ddac-4c83-a4e5-aa3fc58b75b2
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a1482aff-4def-4fed-b65c-c05c3f909cd1'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - major_front
+id: iralpaneldecontrol
+theme: major_front
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:a1482aff-4def-4fed-b65c-c05c3f909cd1'
+settings:
+  id: 'block_content:a1482aff-4def-4fed-b65c-c05c3f909cd1'
+  label: 'Ir al panel de control'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/user/*'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      request_manager: request_manager

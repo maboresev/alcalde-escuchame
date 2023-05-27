@@ -3,9 +3,11 @@ langcode: es
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment.default
     - field.field.node.request.body
     - field.field.node.request.field_comments
     - field.field.node.request.field_images
+    - field.field.node.request.field_internal_comments
     - field.field.node.request.field_issue_type
     - field.field.node.request.field_location
     - field.field.node.request.field_major_area
@@ -158,6 +160,21 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 7
             additional: {  }
+          b756906b-1895-4dc1-a27e-810ee51180c4:
+            uuid: b756906b-1895-4dc1-a27e-810ee51180c4
+            region: content
+            configuration:
+              id: 'field_block:node:request:field_internal_comments'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: basic_string
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
         third_party_settings: {  }
 id: node.request.default
 targetEntityType: node
@@ -195,6 +212,13 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 105
+    region: content
+  field_internal_comments:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
     region: content
   field_issue_type:
     type: entity_reference_label

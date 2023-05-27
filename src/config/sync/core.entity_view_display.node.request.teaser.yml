@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.request.body
     - field.field.node.request.field_comments
     - field.field.node.request.field_images
+    - field.field.node.request.field_internal_comments
     - field.field.node.request.field_issue_type
     - field.field.node.request.field_location
     - field.field.node.request.field_major_area
@@ -30,41 +31,69 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          10b97354-95e4-4207-be4a-25281c12a4ca:
-            uuid: 10b97354-95e4-4207-be4a-25281c12a4ca
-            region: content
-            configuration:
-              id: 'extra_field_block:node:request:content_moderation_control'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 0
-            additional: {  }
-          174d06a5-f530-46ad-9623-a41673ed8353:
-            uuid: 174d06a5-f530-46ad-9623-a41673ed8353
-            region: content
-            configuration:
-              id: 'extra_field_block:node:request:links'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 1
-            additional: {  }
           92345fab-58b3-47ac-84e6-9e16b58555f3:
             uuid: 92345fab-58b3-47ac-84e6-9e16b58555f3
             region: content
             configuration:
               id: 'field_block:node:request:body'
+              label: Descripción
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: text_summary_or_trimmed
                 label: hidden
                 settings:
-                  trim_length: 600
+                  trim_length: 200
                 third_party_settings: {  }
             weight: 2
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 50-50
+        components:
+          afeac341-a632-4327-81e7-010b54bcce9a:
+            uuid: afeac341-a632-4327-81e7-010b54bcce9a
+            region: second
+            configuration:
+              id: 'field_block:node:request:field_issue_type'
+              label: 'Tipo de incidencia'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          adb27d8a-512c-4529-8493-9a8d29d31419:
+            uuid: adb27d8a-512c-4529-8493-9a8d29d31419
+            region: first
+            configuration:
+              id: 'field_block:node:request:moderation_state'
+              label: 'Moderation state'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: content_moderation_state
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
             additional: {  }
         third_party_settings: {  }
 id: node.request.teaser
@@ -93,6 +122,7 @@ content:
 hidden:
   field_comments: true
   field_images: true
+  field_internal_comments: true
   field_issue_type: true
   field_location: true
   field_major_area: true

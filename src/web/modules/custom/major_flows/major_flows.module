@@ -1,0 +1,62 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
+use Drupal\user\Entity\User;
+
+/**
+ * @file
+ * Contains the major_flows.module file.
+ */
+
+ /**
+  * Implements hook_entity_operations_alter().
+  */
+function major_flows_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  $request_uri = \Drupal::request()->getUri();
+
+  // Alter private requests view.
+  if (strpos($request_uri, '/content/requests') != FALSE) {
+    $areas = [];
+    // Adds update state operation to node operations
+    $operations['update_state']['title'] = t('Update');
+    $operations['update_state']['url'] = Url::fromUri('internal:/admin/content/requests/' . $entity->id() . '/update');
+    $operations['update_state']['weight'] = 99;
+
+    // Gets current user and node to control it's access.
+    $current_user = User::load(\Drupal::currentUser()->id());
+    $node = Node::load($entity->id());
+
+    // Only for users with functional areas vinculated.
+    if (!$current_user->field_functional_areas->isEmpty()) {
+      $areas_unfiltered = $current_user->get('field_functional_areas')->getValue();
+      foreach($areas_unfiltered as $area) {
+        $areas[] = $area['target_id'];
+      }
+      if (!in_array($node->field_major_area->target_id, $areas)) {
+        unset($operations['edit']);
+        unset($operations['delete']);
+        unset($operations['update_state']);
+      }
+    }
+  }
+  // Alter the title and weight.
+  /*$operations['translate']['title'] = t('Translate @entity_type', [
+      '@entity_type' => $entity
+      ->getEntityTypeId(),
+  ]);
+  $operations['translate']['weight'] = 99;*/
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function major_flows_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $current_user = User::load(\Drupal::currentUser()->id());
+  if (('node_request_form' == $form_id) 
+    && !($current_user->hasRole('administrator') || $current_user->hasRole('request_manager'))) {
+    unset($form['field_internal_comments']);
+  }
+}

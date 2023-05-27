@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.request.body
     - field.field.node.request.field_comments
     - field.field.node.request.field_images
+    - field.field.node.request.field_internal_comments
     - field.field.node.request.field_issue_type
     - field.field.node.request.field_location
     - field.field.node.request.field_major_area
@@ -66,6 +67,125 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
+          9a8062f8-713a-4817-be63-1515abaf3930:
+            uuid: 9a8062f8-713a-4817-be63-1515abaf3930
+            region: content
+            configuration:
+              id: 'field_block:node:request:field_comments'
+              label: 'Cambios de estado'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: comment_default
+                label: hidden
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          062fc789-e1aa-4cf8-8097-c50d031b61cf:
+            uuid: 062fc789-e1aa-4cf8-8097-c50d031b61cf
+            region: content
+            configuration:
+              id: 'field_block:node:request:field_location'
+              label: Ubicación
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: leaflet_formatter_default
+                label: above
+                settings:
+                  multiple_map: false
+                  leaflet_map: 'OSM Mapnik'
+                  height: 400
+                  height_unit: px
+                  hide_empty_map: false
+                  disable_wheel: false
+                  gesture_handling: false
+                  reset_map:
+                    control: false
+                    options: '{"position":"topleft","title":"Reset View"}'
+                  locate:
+                    control: false
+                    options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
+                    automatic: false
+                  leaflet_tooltip:
+                    value: ''
+                    options: '{"permanent":false,"direction":"center"}'
+                  leaflet_popup:
+                    control: '0'
+                    content: ''
+                    options: '{"maxWidth":"300","minWidth":"50","autoPan":true}'
+                  map_position:
+                    force: false
+                    center:
+                      lat: 37.0
+                      lon: 1.0
+                    zoom: 12
+                    minZoom: 1
+                    maxZoom: 18
+                    zoomFiner: 0
+                  icon:
+                    iconType: marker
+                    iconUrl: ''
+                    shadowUrl: ''
+                    className: ''
+                    iconSize:
+                      x: ''
+                      'y': ''
+                    iconAnchor:
+                      x: ''
+                      'y': ''
+                    shadowSize:
+                      x: ''
+                      'y': ''
+                    shadowAnchor:
+                      x: ''
+                      'y': ''
+                    popupAnchor:
+                      x: ''
+                      'y': ''
+                    html: '<div></div>'
+                    html_class: leaflet-map-divicon
+                    circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
+                  fullscreen:
+                    control: false
+                    options: '{"position":"topleft","pseudoFullscreen":false}'
+                  path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
+                  feature_properties:
+                    values: ''
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          bcb68d30-12b6-45c0-8977-988a896abdec:
+            uuid: bcb68d30-12b6-45c0-8977-988a896abdec
+            region: content
+            configuration:
+              id: 'field_block:node:request:field_images'
+              label: Imágenes
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
         third_party_settings: {  }
 id: node.request.full
 targetEntityType: node
@@ -92,6 +212,7 @@ content:
 hidden:
   field_comments: true
   field_images: true
+  field_internal_comments: true
   field_issue_type: true
   field_location: true
   field_major_area: true
