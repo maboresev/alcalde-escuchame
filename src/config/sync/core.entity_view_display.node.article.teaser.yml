@@ -35,9 +35,12 @@ third_party_settings:
             region: content
             configuration:
               id: 'field_block:node:article:field_image'
+              label: Imagen
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: image
                 label: hidden
@@ -54,14 +57,17 @@ third_party_settings:
             region: content
             configuration:
               id: 'field_block:node:article:body'
+              label: Cuerpo
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: text_summary_or_trimmed
                 label: hidden
                 settings:
-                  trim_length: 600
+                  trim_length: 200
                 third_party_settings: {  }
             weight: 1
             additional: {  }
@@ -70,26 +76,19 @@ third_party_settings:
             region: content
             configuration:
               id: 'field_block:node:article:field_tags'
+              label: Etiquetas
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: entity_reference_label
-                label: above
+                label: hidden
                 settings:
                   link: true
                 third_party_settings: {  }
             weight: 2
-            additional: {  }
-          5f209588-ffc4-4e74-92cf-040f5499e2b1:
-            uuid: 5f209588-ffc4-4e74-92cf-040f5499e2b1
-            region: content
-            configuration:
-              id: 'extra_field_block:node:article:links'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 3
             additional: {  }
         third_party_settings: {  }
 _core:

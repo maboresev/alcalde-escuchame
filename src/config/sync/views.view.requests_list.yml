@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.storage.node.field_major_area
     - node.type.request
     - system.menu.main
@@ -293,6 +294,8 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: requests-view
+      use_ajax: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -354,7 +357,7 @@ display:
         type: full
         options:
           offset: 0
-          items_per_page: 16
+          items_per_page: 3
           total_pages: null
           id: 0
           tags:
@@ -441,10 +444,20 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
       defaults:
         empty: false
         title: false
         pager: false
+        style: false
+        row: false
         arguments: false
         filters: false
         filter_groups: false
@@ -472,7 +485,7 @@ display:
         type: full
         options:
           offset: 0
-          items_per_page: 16
+          items_per_page: 8
           total_pages: null
           id: 0
           tags:
@@ -564,8 +577,18 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
       defaults:
         pager: false
+        style: false
+        row: false
         filters: false
         filter_groups: false
         header: false

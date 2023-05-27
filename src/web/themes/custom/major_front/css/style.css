@@ -9,7 +9,7 @@
     margin-left: 15%;
 }
 
-.view-display-id-page_1 .views-row, .view-display-id-block_2 .views-row {
+.request-view .view-display-id-block_2 .views-row {
     float: left;
     width: 23%;
     padding: 10px;

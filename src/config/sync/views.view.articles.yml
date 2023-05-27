@@ -289,6 +289,9 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      defaults:
+        css_class: false
+      css_class: news-view
       display_extenders: {  }
       path: noticias
       menu:

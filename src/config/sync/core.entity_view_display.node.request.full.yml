@@ -85,28 +85,6 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-            weight: 4
-            additional: {  }
-          bcb68d30-12b6-45c0-8977-988a896abdec:
-            uuid: bcb68d30-12b6-45c0-8977-988a896abdec
-            region: content
-            configuration:
-              id: 'field_block:node:request:field_images'
-              label: Imágenes
-              label_display: visible
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: image
-                label: hidden
-                settings:
-                  image_link: ''
-                  image_style: medium
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
             weight: 5
             additional: {  }
           062fc789-e1aa-4cf8-8097-c50d031b61cf:
@@ -185,6 +163,28 @@ third_party_settings:
                     values: ''
                 third_party_settings: {  }
             weight: 3
+            additional: {  }
+          bcb68d30-12b6-45c0-8977-988a896abdec:
+            uuid: bcb68d30-12b6-45c0-8977-988a896abdec
+            region: content
+            configuration:
+              id: 'field_block:node:request:field_images'
+              label: Imágenes
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 4
             additional: {  }
         third_party_settings: {  }
 id: node.request.full
