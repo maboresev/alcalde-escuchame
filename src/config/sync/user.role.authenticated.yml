@@ -26,6 +26,7 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'cancel account'
   - 'create request content'
   - 'search content'
   - 'use request_management transition create_new_draft'
