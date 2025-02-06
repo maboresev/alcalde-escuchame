@@ -11,7 +11,7 @@ Docker Compose version v2.6.0
 Lanzaremos el comando: 
 docker network create staging --driver bridge --subnet=172.21.0.0/24 --gateway=172.21.0.1
 
-Descomprimimos el archivo files en la carpeta raíz, y accedemos al docker de la base de datos para crear nuestra base de datos para el proyecto. Los datos de la base de datos están en files/settings.php, y podemos cambiarlos a nuestro antojo. Se trata de una base de datos mysql v.8, por lo que accederemos por línea de comandos o a través de un IDE especializado como dbeaver o mysqlworkbench para generar nuestro entorno. El acceso se realiza con root | root como usuario|contraseña.
+Descomprimimos los archivos files.zip y database.zip en la carpeta raíz, y accedemos al docker de la base de datos para crear nuestra base de datos para el proyecto. Los datos de la base de datos están en files/settings.php, y podemos cambiarlos a nuestro antojo. Se trata de una base de datos mysql v.8, por lo que accederemos por línea de comandos o a través de un IDE especializado como dbeaver o mysqlworkbench para generar nuestro entorno. El acceso se realiza con root | root como usuario|contraseña.
 
 Por último, vinculamos nuestro entorno en nuestro fichero hosts para facilitar nuestro trabajo local. En linux se encuentra en etc/hosts, cambiamos sus permisos con 'chmod 777 /etc/hosts' y añadimos la línea: 
 172.21.0.40 local.alcalde
